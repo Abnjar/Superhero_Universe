@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veloura | Premium Editorial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">VELOURA</div>
+  <div class="nav-center">
+    <input type="text" id="search" placeholder="Search Collection..." />
+  </div>
+  <div class="nav-actions">
+    <button id="darkToggle" title="Toggle Theme">🌙</button>
+    <button id="wishlistBtn">❤️ <span id="wishCount">0</span></button>
+    <button id="cartBtn">👜 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span>NEW ARRIVALS 2026</span>
+    <h1>The Art of Simplicity</h1>
+    <button class="cta">Explore Collection</button>
+  </div>
+</section>
+
+<section class="categories-container">
+  <h2 class="section-title">Browse Collection</h2>
+  <div class="categories-grid">
+    <div class="category-card active" data-category="">
+      <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500" alt="All"></div>
+      <span>All Pieces</span>
+    </div>
+    <div class="category-card" data-category="men">
+      <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=500" alt="Men"></div>
+      <span>Menswear</span>
+    </div>
+    <div class="category-card" data-category="women">
+      <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500" alt="Women"></div>
+      <span>Womenswear</span>
+    </div>
+    <div class="category-card" data-category="kids">
+      <div class="cat-img-box"><img src="https://prowellness.childrens.pennstatehealth.org/wp-content/uploads/2022/12/group-primary-schoolers-lying-ground-smiling-1024x796.jpg" alt="Kids"></div>
+      <span>Youth</span>
+    </div>
+  </div>
+</section>
+
+<div class="filters-bar">
+  <select id="sizeFilter">
+    <option value="">Filter by Size</option>
+    <option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option>
+  </select>
+  <select id="sort">
+    <option value="">Sort By</option>
+    <option value="low">Price: Low to High</option>
+    <option value="high">Price: High to Low</option>
+  </select>
+</div>
+
+<main id="productGrid" class="grid"></main>
+
+  <div id="cartSidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h2>Shopping Bag </h2>
+    <button id="closeCart" class="close-btn">✕</button>
+  </div>
+
+  <div class="shipping-goal">
+    <p id="shippingMsg">Add ₹1,501 more for <strong>Free Shipping</strong></p>
+    <div class="progress-bg"><div id="progressBar" class="progress-fill"></div></div>
+  </div>
+
+  <div id="cartItems" class="sidebar-content">
+    </div>
+
+  <div class="sidebar-footer">
+    <div class="total-row">
+      <span>Subtotal</span>
+      <span class="total-amount">₹<span id="cartTotal">0</span></span>
+    </div>
+    <p class="tax-note">Taxes and shipping calculated at checkout.</p>
+    <button id="checkoutBtn" class="cta checkout-cta">Checkout Now</button>
+  </div>
+</div>
+
+<div id="wishlistSidebar" class="sidebar">
+  <div class="sidebar-header"><h2>Favorites</h2><button id="closeWishlist" class="close-btn">✕</button></div>
+  <div id="wishlistItems" class="sidebar-content"></div>
+  <p id="emptyWishlist" class="empty-msg">Your wishlist is empty.</p>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModal">✕</button>
+    <div class="modal-body">
+      <div class="modal-img-wrap"><img id="modalImg" /></div>
+      <div class="modal-info">
+        <h2 id="modalName"></h2>
+        <p id="modalPrice"></p>
+        <button id="modalAdd" class="cta">Add to Bag</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Top: Brand Statement -->
+  <div class="about-hero">
+    <div class="about-tag">EST. 2025 · INDIA</div>
+    <h2 class="about-headline">Crafted for those<br>who wear silence well.</h2>
+    <p class="about-sub">
+      Veloura was born from a single belief — that luxury should feel effortless,
+      not loud. We design pieces that whisper quality, not scream it.
+    </p>
+  </div>
+
+  <!-- Middle: Three Pillars -->
+  <div class="about-pillars">
+    <div class="pillar">
+      <span class="pillar-num">01</span>
+      <h3>Slow Fashion</h3>
+      <p>Every piece is made in small batches. No overproduction. No waste. Only what the world needs.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">02</span>
+      <h3>Ethical Sourcing</h3>
+      <p>Our fabrics are sourced from certified mills in Rajasthan and Tamil Nadu, fairly compensated at every step.</p>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">03</span>
+      <h3>Timeless Design</h3>
+      <p>We don't chase trends. We design for a wardrobe that outlasts them — clean lines, enduring silhouettes.</p>
+    </div>
+  </div>
+
+  <!-- Bottom: Stats Row -->
+  <div class="about-stats">
+    <div class="stat-item">
+      <span class="stat-num" data-target="12000">12</span>
+      <span class="stat-label">Customers</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="6">0.4</span>
+      <span class="stat-label">Years of Craft</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="100">89</span>
+      <span class="stat-label">% Ethical</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="48">12</span>
+      <span class="stat-label">Active Styles</span>
+    </div>
+  </div>
+
+</section>
+
+
+<div id="toast"></div>
+<script src="code.js"></script>
+</body>
+</html>
