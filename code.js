@@ -1,301 +1,265 @@
-const products = [
-    { id: 1, name: "Minimalist Cotton Shirt",          price: 3499, category:  "men",     size: "M", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/shirt/f/z/l/l-plain-sky-blue-a1-hasini-fashion-original-imahgtf9mk7xht4p.jpeg?q=90" },
-    { id: 2, name: "Silk Summer Dress",                price: 5999, category:  "women",   size: "S", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/dress/c/c/f/-original-imaheazspszgtcuz.jpeg?q=90" },
-    { id: 3, name: "Structure Denim Jacket",           price: 4299, category:  "kids",    size: "S", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/jacket/p/d/r/6-7-years-1-no-boysngirls-happy-comics-denim-jacket-mysha-original-imahfct94ehq7fb3.jpeg?q=90" },
-    { id: 4, name: "Overcoat in Wool",                 price: 12999, category: "women",   size: "L", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/coat/b/b/z/3xl-dlnxwcoat48earthbrwn-chkokko-original-imahgvkrahjk5xmp.jpeg?q=90" },
-    { id: 5, name: "Relaxed Fit Chinos",               price: 2799, category:  "men",     size: "L", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/trouser/h/f/j/34-31058795-roadster-original-imah8nxrg3fkmez6.jpeg?q=90" },
-    { id: 6, name: "Green Midi/Calf",                  price: 799, category:   "women",   size: "M", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/dress/f/i/y/s-dr11272-new25-sheetal-accociates-original-imahgs3wfyfmbh3z.jpeg?q=90"},
-    { id: 7, name: "Brown Midi/Calf",                  price: 799, category:   "women",   size: "M", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/dress/l/h/2/m-floe-130-133-purvaja-original-imahag9yyhg76nhz.jpeg?q=90"},
-    { id: 8, name: "Tankori Kanjivaram Tissue Saree",  price: 999, category:   "women",   size: "L", img: "https://rukminim2.flixcart.com/image/1280/1280/xif0q/sari/y/r/n/free-regular-tankori-unstitched-original-imahdnhxbqubzdgz.jpeg?q=90"},
-    { id: 9, name: "Men Regular Fit Shirt",            price: 899, category:   "men",     size: "L", img: "https://assets-jiocdn.ajio.com/medias/sys_master/root1/20260311/xF02/69b14cc84970ce6a6e3a0c28/-473Wx593H-703144500-brown-MODEL.jpg"},
-    { id: 10, name: " Boys Embroidered Relaxed Shirt", price: 699, category:   "kids",   size: "S", img: "https://assets-jiocdn.ajio.com/medias/sys_master/root1/20250725/zNMz/68836b2b3d468c61ab20b29b/-473Wx593H-443081680-ltblue-MODEL.jpg"},
-    { id: 11, name: "Hello Kitty Fit & Flare Dress",   price: 699, category:   "kids",   size: "s", img: "https://assets-jiocdn.ajio.com/medias/sys_master/root1/20251118/2jmT/691c73b5a470c5082f9e64ad/-473Wx593H-443098207-pink-MODEL.jpg"},
-    { id: 12, name: "Girls Relaxed Cargo Trousers",    price: 899, category:   "kids",   size: "s", img: "https://assets-jiocdn.ajio.com/medias/sys_master/root1/20251205/Wmp9/6932c1ab720fb821d36e9fa9/-473Wx593H-702589411-blue-MODEL.jpg"},
-    { id: 13, name: "Women One-Shoulder Bodycon Dress",price: 1799, category:   "women",   size: "L", img: "https://assets-jiocdn.ajio.com/medias/sys_master/root/20250610/VhBC/6847655d55340d4b4f96d16a/-1117Wx1400H-701704665-red-MODEL.jpg"},
-    { id: 14, name: "Men Regular Fit Shirt"           ,price: 799, category:   "men",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root/20250617/yGME/685120c27a6cd4182fb6d38f/-473Wx593H-443062636-green-MODEL.jpg"},
-    { id: 15, name: "Men Relaxed Fit Chinos"          ,price: 799, category:   "men",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20251224/FhIz/694bfc71720fb821d3af18e3/-473Wx593H-443099783-beige-MODEL4.jpg"},
-    { id: 16, name: "Women Striped Regular Fit Top"   ,price: 1799, category:   "women",   size: "M", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20250728/nDoS/688765a63d468c61ab285b14/-1117Wx1400H-702028648-beige-MODEL.jpg"},
-    { id: 17, name: "Women Lace Slim Fit Top"         ,price: 1399, category:   "women",   size: "M", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20250902/ALRL/68b5f9b83d468c61abb06cd2/-1117Wx1400H-702189108-white-MODEL.jpg"},
-    { id: 18, name: "Disney Graphic Print Oversized"  ,price: 899, category:   "women",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20260119/ILb5/696e4621cbfa0d560881bf49/-473Wx593H-702779372-white-MODEL.jpg"},
-    { id: 19, name: "Linen Cotton Printed Saree",      price: 1299, category:   "women",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20251222/aGBg/69492f95720fb821d3a14c11/-1117Wx1400H-702647422-pink-MODEL2.jpg"},
-    { id: 20, name: "Embroidered Half & Half Saree",   price: 1499, category:   "women",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root/20230628/Souv/649bc06deebac147fc1eed9d/-1117Wx1400H-465944058-black-MODEL.jpg"},
-    { id: 21, name: "Men Regular Spread-Collar Shirt", price: 999, category:   "men",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20260218/Aiey/6994ca66cbfa0d5608109f27/-473Wx593H-702972686-brown-MODEL.jpg"},
-    { id: 22, name: "Men Shirt with Patch Pocket",     price: 999, category:   "men",   size: "L", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20260121/e2XR/6970bd75cbfa0d56088aca09/-473Wx593H-702787162-olive-MODEL.jpg"},
-    { id: 23, name: "Boys Printed Tailored Fit Shirt", price: 799, category:   "kids",   size: "S", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20260227/QQFO/69a1793d08a98823902a58ad/-1117Wx1400H-443111812-white-MODEL.jpg"},
-    { id: 24, name: "Graphic Print Round-Neck T-Shirt",price: 899, category:   "kids",   size: "S", img:"https://assets-jiocdn.ajio.com/medias/sys_master/root1/20251110/20eJ/6911c5bb88d6d62ff8d537e0/-473Wx593H-443615558-multi-MODEL.jpg"},
-    { id: 25, name: "Shein Square Neck Balloon Sleeves Blouson Fitted Short Top",price: 999, category:   "women",   size: "M", img:"https://assets.sheinindia.in/medias/shein_sys_master/root/20250301/9YRv/67c29d422960820c49c10335/-1117Wx1400H-443319259-red-MODEL3.jpg"},
+// 1. Data Source
+const destinations = [
+    { 
+        id: 1,
+        name: "Kyoto", 
+        vibe: "Zen & Tradition", 
+        category: "Cities", 
+        price: "$1,200", 
+        img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
+        desc: "Experience the heart of Japanese culture. Walk through the Fushimi Inari-taisha shrine and enjoy authentic tea ceremonies in ancient wooden temples."
+    },
+    { 
+        id: 2,
+        name: "Amalfi Coast", 
+        vibe: "Luxury & Sea", 
+        category: "Nature", 
+        price: "$2,100", 
+        img: "https://images.unsplash.com/photo-1533105079780-92b9be482077",
+        desc: "A vertical landscape of pastel-colored houses perched above the turquoise Mediterranean. Ideal for coastal hikes and world-class dining."
+    },
+    { 
+        id: 3,
+        name: "Tulum", 
+        vibe: "Boho & Jungle", 
+        category: "Adventure", 
+        price: "$950", 
+        img: "https://images.unsplash.com/photo-1504730655501-24c39ac53f0e",
+        desc: "Where Mayan ruins meet white sand beaches. Tulum offers a unique blend of spiritual wellness and adventurous jungle excursions."
+    },
+    { 
+        id: 4,
+        name: "Lofoten", 
+        vibe: "Nature & Arctic", 
+        category: "Nature", 
+        price: "$1,800", 
+        img: "https://travel-shark.com/wp-content/uploads/2023/03/underbridge-scaled.jpg",
+        desc: "Rugged mountains, deep fjords, and the Northern Lights. Lofoten is a photographer's dream located well within the Arctic Circle."
+    },
+    { 
+        id: 5,
+        name: "Taj Mahal", 
+        vibe: "Tragic Romance", 
+        category: "Cities", 
+        price: "$1,000", 
+        img: "https://hippie-inheels.com/wp-content/uploads/2018/03/taj-mahal-places-to-visit-in-india.jpg",
+        desc: "The Taj Mahal is an ivory-white marble mausoleum in Agra, India, commissioned in 1632 by Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal."
+    },
+     { 
+        id: 6,
+        name: "Rann of Kutch", 
+        vibe: "magical blend of peaceful vastness and vibrant cultural celebration", 
+        category: "Nature", 
+        price: "$800", 
+        img: "https://hippie-inheels.com/wp-content/uploads/2018/02/rann-utsav-2017-18-2325856_1280.jpg",
+        desc: "The Rann of Kutch is a massive, seasonal salt marsh and desert located in Gujarat, India, and partly in Pakistan. Renowned for its surreal white salt landscape (the Great Rann), it turns into a shallow, pink-tinted wetland during the monsoon."
+    },
+     { 
+        id: 7,
+        name: "Darjeeling", 
+        vibe: "Mountain & Tea", 
+        category: "Nature", 
+        price: "$1,000", 
+        img: "https://hippie-inheels.com/wp-content/uploads/2018/02/toy-train-2725148_1280.jpg",
+        desc: "Darjeeling, known as the Queen of the Hills, is a stunning town in West Bengal, India, located in the Lesser Himalayas at 2,042 meters. Famous for its world-renowned tea, the scenic Darjeeling Himalayan Railway (a UNESCO World Heritage Site), and majestic views of Mt. Kanchenjunga, it is a premier tourist destinatio"
+    },
+     { 
+        id: 8,
+        name: "Hampi", 
+        vibe: "Historical & Ruins", 
+        category: "Cities", 
+        price: "$1,300", 
+        img: "https://cdn.audleytravel.com/3947/2816/79/15996558-ancient-ruins-in-hampi.jpg",
+        desc: "Hampi, a UNESCO World Heritage Site in Karnataka, India, is the breathtaking ruin of the 14th-century Vijayanagara Empire's capital, once one of the world's largest cities"
+    },
+     { 
+        id: 9,
+        name: "Turkey , Cappadocia", 
+        vibe: "Nature", 
+        category: "Nature", 
+        price: "$1,600", 
+        img: "https://kelseyinlondon.com/wp-content/uploads/2025/01/things-to-do-in-cappadocia-hot-air-balloon-watching-tour.jpg",
+        desc: "Cappadocia is a semi-arid region in central Turkey famous for its unique “fairy chimneys” – towering, cone-shaped rock formations clustered in Monks Valley, Love Valley, Göreme, Uchisar, and elsewhere. Uchisar Castle and Göreme Open Air Museum contain Bronze Age homes carved into valley walls by troglodytes (cave dwellers) and later used as refuges by early Christians seeking to avoid persecution."
+    },
+     { 
+        id: 10,
+        name: "Vaitnam, Halong Bay", 
+        vibe: "nature & serenity", 
+        category: "Nature", 
+        price: "$1,400", 
+        img: "https://www.paradisevietnam.com/public/backend/uploads/where-to-stay-in-halong-bay/places-to-visit-in-halong-bay_(7).jpg",
+        desc: "Located in northeast Vietnam, this iconic UNESCO Heritage Site is known for its dreamy landscape of emerald waters and more than 1600 rugged karst limestone islands rising up in the natural bay and topped by rainforests"
+    },
+     { 
+        id: 11,
+        name: "Naxos Town, Naxos, Greece", 
+        vibe: "Mordern & Traditional", 
+        category: "Cities", 
+        price: "$1,500", 
+        img: "https://images.squarespace-cdn.com/content/v1/6324802d2fb2bb196e51937d/8c5c4807-49a3-41bd-b238-5335c94047ab/Naxos+Greece00018.jpg",
+        desc: "Naxos: Soak in the Greek Island life! Take the short walk from town to the Temple of Apollo. Rent a pedal boat. Have late-afternoon drinks at 1739 overlooking Naxos."
+    },
 ];
 
-let cart = [];
-let wishlist = [];
-let activeCategory = "";
+// 2. Select Elements
+const grid = document.getElementById('destinationsGrid');
+const tags = document.querySelectorAll('.tag');
+const searchInput = document.getElementById('searchInput');
+const modal = document.getElementById('detailModal');
+const modalBody = document.getElementById('modalBody');
+const closeBtn = document.querySelector('.close-modal');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('productGrid');
-    const searchInput = document.getElementById('search');
-
-    // --- Main Rendering Engine ---
-    
-    window.renderProducts = (items) => {
-    const grid = document.getElementById('productGrid');
-    grid.innerHTML = '';
-    
-    if (items.length === 0) {
-        grid.innerHTML = `<div class="no-results"><p>No pieces found.</p><button onclick="resetFilters()" class="reset-link">Reset</button></div>`;
-        return;
-    }
-
-    items.forEach(p => {
-        const isFav = wishlist.some(item => item.id === p.id);
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="img-container">
-                <button class="wishlist-add" onclick="toggleWishlist(${p.id})">${isFav ? '❤️' : '🤍'}</button>
-                <img src="${p.img}" class="product-img" onclick="openModal(${p.id})">
-                <button class="quick-add" onclick="addToCart(${p.id})">Quick Add +</button>
+// 3. Render Cards Function
+function renderCards(data) {
+    grid.innerHTML = data.map((item, index) => `
+        <div class="card animate-up" style="transition-delay: ${index * 0.1}s" onclick="openDetails(${item.id})">
+            <div class="like-btn" onclick="event.stopPropagation(); toggleLike(this)">
+                <i class="fas fa-heart"></i>
             </div>
-            <div class="product-info">
-                <div class="info-flex">
-                   <h3>${p.name.toUpperCase()}</h3>
-                   <p class="product-price">₹${p.price.toLocaleString()}</p>
+            <img src="${item.img}?auto=format&fit=crop&w=600&q=80" alt="${item.name}">
+            <div class="card-info">
+                <span class="vibe-tag">${item.vibe}</span>
+                <h3>${item.name}</h3>
+                <div class="card-footer">
+                    <span class="price"><b>${item.price}</b> / stay</span>
+                    <button class="btn-mini">Details</button>
                 </div>
             </div>
-        `;
-        grid.appendChild(card);
-    });
-};
-     
+        </div>
+    `).join('');
+    setTimeout(observeScroll, 50);
+}
 
-// --- Cart Logic ---
-window.addToCart = (id) => {
-    const product = products.find(p => p.id === id);
-    cart.push(product);
-    updateCartUI();
-    showToast(`${product.name} added to bag`);
-    function updateCartUI() {
-    const container = document.getElementById('cartItems');
-    const totalEl = document.getElementById('cartTotal');
-    const countEl = document.getElementById('cartCount');
-    const progress = document.getElementById('progressBar');
-    const shipMsg = document.getElementById('shippingMsg');
-    
-    container.innerHTML = '';
-    let total = 0;
+// 4. Modal Logic
+function openDetails(id) {
+    const item = destinations.find(d => d.id === id);
+    if(!item) return;
 
-    // Use a Map or Object to track quantities if not already structured
-    const uniqueItems = [...new Set(cart.map(item => item.id))];
-
-    uniqueItems.forEach(id => {
-        const product = products.find(p => p.id === id);
-        const quantity = cart.filter(item => item.id === id).length;
-        const subtotal = product.price * quantity;
-        total += subtotal;
-
-        const div = document.createElement('div');
-        div.className = 'cart-item';
-        div.innerHTML = `
-            <img src="${product.img}" class="cart-item-img">
-            <div class="cart-item-info">
-                <h4>${product.name}</h4>
-                <p>₹${product.price.toLocaleString()}</p>
-                <div class="qty-controls">
-                    <button class="qty-btn" onclick="updateQty(${id}, -1)">-</button>
-                    <span class="qty-val">${quantity}</span>
-                    <button class="qty-btn" onclick="updateQty(${id}, 1)">+</button>
+    modalBody.innerHTML = `
+        <div class="modal-grid">
+            <img class="modal-img" src="${item.img}?auto=format&fit=crop&w=1000&q=80">
+            <div class="modal-info">
+                <span class="vibe-tag">${item.category}</span>
+                <h2>${item.name}</h2>
+                <p class="description">${item.desc}</p>
+                <div class="amenities">
+                    <i class="fas fa-wifi" title="Free Wifi"></i>
+                    <i class="fas fa-coffee" title="Breakfast included"></i>
+                    <i class="fas fa-camera" title="Photo Tours"></i>
                 </div>
+                <div class="price" style="margin-bottom: 2rem;">Starting at <b>${item.price}</b></div>
+                <button class="btn-mini" style="width: 100%; padding: 1.2rem; border-radius: 15px; background: var(--primary);">Book This Trip</button>
             </div>
-            <button class="remove-btn" onclick="removeAllOfItem(${id})">✕</button>
-        `;
-        container.appendChild(div);
-    });
-
-    // Update Shipping Goal (Goal: ₹5000)
-    const goal = 5000;
-    const percentage = Math.min((total / goal) * 100, 100);
-    progress.style.width = `${percentage}%`;
-    
-    if (total >= goal) {
-        shipMsg.innerHTML = "You've unlocked <strong>Free Shipping</strong>";
-    } else {
-        shipMsg.innerHTML = `Add ₹${(goal - total).toLocaleString()} more for <strong>Free Shipping</strong>`;
-    }
-
-    totalEl.innerText = total.toLocaleString();
-    countEl.innerText = cart.length;
+        </div>
+    `;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
-// Logic for quantity buttons
-window.updateQty = (id, change) => {
-    if (change > 0) {
-        const product = products.find(p => p.id === id);
-        cart.push(product);
-    } else {
-        const index = cart.findLastIndex(item => item.id === id);
-        if (index > -1) cart.splice(index, 1);
+closeBtn.onclick = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+};
+
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
     }
-    updateCartUI();
 };
 
-window.removeAllOfItem = (id) => {
-    cart = cart.filter(item => item.id !== id);
-    updateCartUI();
-};
-};
-
-function updateCartUI() {
-    const container = document.getElementById('cartItems');
-    const totalEl = document.getElementById('cartTotal');
-    const countEl = document.getElementById('cartCount');
-    
-    container.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        total += item.price;
-        const div = document.createElement('div');
-        div.className = 'sidebar-item';
-        div.innerHTML = `
-            <div class="item-details">
-                <p class="item-name">${item.name}</p>
-                <p class="item-price">₹${item.price.toLocaleString()}</p>
-            </div>
-            <button class="remove-btn" onclick="removeFromCart(${index})">✕</button>
-        `;
-        container.appendChild(div);
+// 5. Filter & Search Logic
+tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+        tags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+        const selected = tag.textContent;
+        const filtered = selected === "All" ? destinations : destinations.filter(d => d.category === selected);
+        renderCards(filtered);
     });
-
-    totalEl.innerText = total.toLocaleString();
-    countEl.innerText = cart.length;
-}
-
-window.removeFromCart = (index) => {
-    cart.splice(index, 1);
-    updateCartUI();
-};
-
-function showToast(msg) {
-    const t = document.getElementById('toast');
-    t.innerText = msg;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-// Connect the Modal Add Button
-document.getElementById('modalAdd').onclick = () => {
-    // We need to know which ID is currently in the modal. 
-    // A simple way is to check the name or store a global 'currentModalId'
-    const name = document.getElementById('modalName').innerText;
-    const product = products.find(p => p.name === name);
-    if(product) addToCart(product.id);
-    document.getElementById('modal').classList.add('hidden');
-}; 
-
-    // --- Filter & Search Logic ---
-    function applyAllFilters() {
-        let filtered = [...products];
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const sizeTerm = document.getElementById('sizeFilter').value;
-        const sortTerm = document.getElementById('sort').value;
-
-        if (activeCategory) filtered = filtered.filter(p => p.category === activeCategory);
-        if (searchTerm) filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm));
-        if (sizeTerm) filtered = filtered.filter(p => p.size === sizeTerm);
-        
-        if (sortTerm === "low") filtered.sort((a, b) => a.price - b.price);
-        if (sortTerm === "high") filtered.sort((a, b) => b.price - a.price);
-
-        renderProducts(filtered);
-    }
-
-    // --- Event Listeners ---
-    searchInput.addEventListener('input', applyAllFilters);
-    document.getElementById('sizeFilter').onchange = applyAllFilters;
-    document.getElementById('sort').onchange = applyAllFilters;
-
-    document.querySelectorAll('.category-card').forEach(card => {
-        card.onclick = () => {
-            document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-            activeCategory = card.dataset.category;
-            applyAllFilters();
-        };
-    });
-
-    window.resetFilters = () => {
-        searchInput.value = '';
-        document.getElementById('sizeFilter').value = '';
-        document.getElementById('sort').value = '';
-        activeCategory = "";
-        applyAllFilters();
-    };
-
-    // --- Sidebar & Theme Logic ---
-    const setupSidebar = (btnId, sidebarId, closeId) => {
-        document.getElementById(btnId).onclick = () => document.getElementById(sidebarId).classList.add('open');
-        document.getElementById(closeId).onclick = () => document.getElementById(sidebarId).classList.remove('open');
-    };
-    setupSidebar('cartBtn', 'cartSidebar', 'closeCart');
-    setupSidebar('wishlistBtn', 'wishlistSidebar', 'closeWishlist');
-
-    document.getElementById('darkToggle').onclick = () => {
-        document.body.classList.toggle('dark-mode');
-        document.getElementById('darkToggle').innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    };
-
-    // --- Initial Load ---
-    renderProducts(products);
 });
 
-// Modal Logic
-window.openModal = (id) => {
-    const p = products.find(prod => prod.id === id);
-    document.getElementById('modalImg').src = p.img;
-    document.getElementById('modalName').innerText = p.name;
-    document.getElementById('modalPrice').innerText = "₹" + p.price.toLocaleString();
-    document.getElementById('modal').classList.remove('hidden');
-};
-document.getElementById('closeModal').onclick = () => document.getElementById('modal').classList.add('hidden');
+searchInput.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+    const filtered = destinations.filter(d => d.name.toLowerCase().includes(term) || d.vibe.toLowerCase().includes(term));
+    renderCards(filtered);
+});
 
-// Wishlist Logic
-window.toggleWishlist = (id) => {
-    const prod = products.find(p => p.id === id);
-    const idx = wishlist.findIndex(p => p.id === id);
-    idx > -1 ? wishlist.splice(idx, 1) : wishlist.push(prod);
-    document.getElementById('wishCount').innerText = wishlist.length;
-    // Note: Re-rendering full grid can be slow, but works for small catalogs
-    document.querySelectorAll('.category-card.active')[0].click(); 
-};
-
-
-
-
-function animateCounters() {
-  const counters = document.querySelectorAll('.stat-num');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const el = entry.target;
-      const target = parseInt(el.dataset.target);
-      const duration = 1800;
-      const start = performance.now();
-
-      function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease out cubic
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(ease * target).toLocaleString();
-        if (progress < 1) requestAnimationFrame(update);
-        else el.textContent = target.toLocaleString();
-      }
-
-      requestAnimationFrame(update);
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.4 });
-
-  counters.forEach(el => observer.observe(el));
+// 6. Interactions & Observer
+function toggleLike(btn) {
+    btn.classList.toggle('active');
+    btn.style.transform = 'scale(1.4)';
+    setTimeout(() => btn.style.transform = '', 200);
 }
+
+function observeScroll() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+}
+
+// Initialize
+renderCards(destinations);
+/* Keep your existing filter, search, and heart logic below */
+// 3. Add the Calculation Logic
+function calculateTotal(basePrice) {
+    const guests = document.getElementById('guestCount').value || 1;
+    const display = document.getElementById('totalPriceDisplay');
+    
+    // Add visual feedback (the "blink" effect)
+    display.classList.add('updating');
+    
+    setTimeout(() => {
+        const total = basePrice * guests;
+        display.textContent = `$${total.toLocaleString()}`;
+        display.classList.remove('updating');
+    }, 150);
+}
+
+// Combine your two openDetails functions into this one:
+function openDetails(id) {
+    const item = destinations.find(d => d.id === id);
+    if(!item) return;
+
+    const basePrice = parseInt(item.price.replace(/[^0-9]/g, ''));
+
+    modalBody.innerHTML = `
+        <div class="modal-grid">
+            <img class="modal-img" src="${item.img}?auto=format&fit=crop&w=1000&q=80">
+            <div class="modal-info">
+                <span class="vibe-tag">${item.category}</span>
+                <h2>${item.name}</h2>
+                <p class="description">${item.desc}</p>
+                
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label>Check-in Date</label>
+                        <input type="date" id="bookingDate" value="${new Date().toISOString().split('T')[0]}">
+                    </div>
+                    <div class="form-group">
+                        <label>Guests</label>
+                        <input type="number" id="guestCount" value="1" min="1" max="10" 
+                               oninput="calculateTotal(${basePrice})">
+                    </div>
+                    
+                    <div class="price-summary">
+                        <span>Total Estimate</span>
+                        <b id="totalPriceDisplay">$${basePrice.toLocaleString()}</b>
+                    </div>
+                </div>
+
+                <button class="btn-mini" style="width: 100%; padding: 1.2rem; border-radius: 15px; background: var(--primary); margin-top: 1.5rem;">
+                    Confirm Booking
+                </button>
+            </div>
+        </div>
+    `;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Add this at the end of your file to trigger the About section animation
+document.addEventListener('DOMContentLoaded', observeScroll);
