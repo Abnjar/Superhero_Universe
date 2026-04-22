@@ -1,0 +1,385 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #1a1a1a, #333);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: crimson;
+  padding: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+section {
+  padding: 20px;
+  border-bottom: 2px solid #444;
+}
+
+.battle-log {
+  background: #222;
+  padding: 10px;
+  margin-top: 10px;
+  height: 100px;
+  overflow-y: auto;
+}
+
+button {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: orange;
+}
+
+.quiz-options button {
+  display: block;
+  margin: 5px 0;
+}
+
+.heroes-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background: #444;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+}/* General Comic Theme */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: radial-gradient(circle at top left, #111 0%, #333 100%);
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, crimson, darkred);
+  padding: 25px;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px black;
+  border-bottom: 5px solid gold;
+}
+
+/* Sections */
+section {
+  padding: 25px;
+  border-bottom: 3px dashed #555;
+  animation: fadeIn 1s ease-in;
+}
+
+h2 {
+  color: gold;
+  text-shadow: 1px 1px 3px black;
+  margin-bottom: 10px;
+}
+
+/* Battle Log */
+.battle-log {
+  background: #222;
+  padding: 15px;
+  margin-top: 15px;
+  height: 120px;
+  overflow-y: auto;
+  border: 2px solid crimson;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(to right, gold, orange);
+  border: 2px solid #000;
+  padding: 12px 25px;
+  margin: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px black;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 10px black;
+}
+
+/* Quiz Options */
+.quiz-options button {
+  display: block;
+  margin: 8px 0;
+  width: 200px;
+}
+
+/* Hero Cards */
+.heroes-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-card {
+  background: #444;
+  padding: 15px;
+  border-radius: 10px;
+  width: 160px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid gold;
+  box-shadow: 2px 2px 8px black;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hero-card:hover {
+  transform: rotate(-3deg) scale(1.05);
+  background: #555;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Hero Details Section */
+.hero-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-profile {
+  background: #222;
+  border: 3px solid gold;
+  border-radius: 12px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 3px 3px 10px black;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hero-profile h3 {
+  margin: 0;
+  font-size: 1.5em;
+  color: crimson;
+  text-shadow: 1px 1px 3px black;
+}
+
+.hero-profile .tagline {
+  font-style: italic;
+  color: #ffcc00;
+  margin: 5px 0 10px;
+}
+
+.hero-profile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hero-profile ul li {
+  margin: 5px 0;
+  color: #ddd;
+}
+
+.hero-profile:hover {
+  transform: scale(1.05) rotate(-2deg);
+  background: #333;
+  cursor: pointer;
+}header {
+  background: url('https://i.redd.it/dzkwgwfv3zfa1.png') center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 8px black;
+  color: gold;
+  border-bottom: 5px solid crimson;
+  position: relative;
+}
+
+/* Optional overlay for better text readability */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: 0;
+}
+
+header span {
+  position: relative;
+  z-index: 1; /* keeps text above overlay */
+}
+.flip-card {
+  background: transparent;
+  width: 160px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid gold;
+  box-shadow: 2px 2px 8px black;
+}
+
+.flip-card-front {
+  background: #444;
+  color: #fff;
+}
+
+.flip-card-back {
+  background: #222;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+#about {
+  background: linear-gradient(to right, #222, #111);
+  padding: 30px;
+  text-align: center;
+  border-top: 4px solid gold;
+}
+
+#about h2 {
+  color: crimson;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 15px;
+}
+
+#about p {
+  max-width: 600px;
+  margin: 10px auto;
+  line-height: 1.6;
+  color: #ddd;
+  font-size: 1.1em;
+}
+#comics {
+  background: #111;
+  padding: 40px;
+  border-top: 4px solid crimson;
+}
+
+#comics h2 {
+  color: gold;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 25px;
+}
+
+.comics-gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comic-card {
+  background: #222;
+  border: 3px solid gold;
+  border-radius: 12px;
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 3px 3px 10px black;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.comic-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.comic-card h3 {
+  color: crimson;
+  margin: 10px 0;
+}
+
+.comic-card p {
+  font-size: 0.9em;
+  color: #ddd;
+}
+
+.comic-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+  cursor: pointer;
+}
+/* Modal background */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  overflow: auto;
+}
+
+/* Modal content */
+.modal-content {
+  background: #222;
+  margin: 10% auto;
+  padding: 20px;
+  border: 3px solid gold;
+  width: 60%;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px black;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.modal-content h2 {
+  color: crimson;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Superhero Universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><span>Superhero Universe</span></header>
+
+  <!-- 1. Hero Details -->
+  <section id="details">
+  <h2>Hero Details</h2>
+  <div class="hero-details">
+    <div class="hero-profile">
+      <h3>Iron man</a></h3>
+      <p class="tagline">"Genius, billionaire, playboy, philanthropist.!"</p>
+      <ul>
+        <li>Origin: Tony Stark, a genius billionaire industrialist, builds the first suit (Mark I) to survive a kidnapping, replacing his damaged heart with a magnetic Arc Reactor.</li>
+        <li>- First Appearance: Tales of Suspense #39 (1963).
+</li>
+        <li>- Skills: Genius-level intellect, expert engineer, and strategist.
+        </li>
+
+</html>
+</li>
+    </div>
+
+    <div class="hero-profile">
+      <h3>🌑 Raven </h3>
+      <p class="tagline">"Azarath Metrion Zinthos"</p>
+      <ul>
+        <li>telekinesis </li>
+        <li>dark energy manipulation</li>
+        <li>can link her mind with others</li>
+      </ul>
+    </div>
+
+    <div class="hero-profile">
+      <h3>🌊 Aqua Man</h3>
+      <p class="tagline">""son of the land, king of the seas"</p>
+      <ul>
+        <li>Controls marine life</li>
+        <li>Superhuman durability</li>
+        <li>Breathes underwater</li>
+      </ul>
+    </div>
+
+    <div class="hero-profile">
+      <h3>Nagraj</h3>
+      <p class="tagline">"The King of the Jungle"</p>
+      <ul>
+        <li>Originally created as an international terror weapon by the evil scientist Professor Nagmani</li>
+        <li>Superhuman strength and agility</li>
+        <li>Enhanced senses and combat skills</li>
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <!-- 2. Battle Arena -->
+  <section id="battle">
+    <h2>Battle Arena</h2>
+    <button onclick="startBattle()">Start Battle</button>
+    <div class="battle-log" id="battleLog"></div>
+  </section>
+
+  <!-- 3. Quiz -->
+  <section id="quiz">
+    <h2>Superhero Quiz</h2>
+    <p>Which hero controls water?</p>
+    <div class="quiz-options">
+      <button onclick="checkAnswer('Iron Blaze')">Iron Blaze</button>
+      <button onclick="checkAnswer('Shadow Fang')">Shadow Fang</button>
+      <button onclick="checkAnswer('Aqua Storm')">Aqua Storm</button>
+    </div>
+    <p id="quizResult"></p>
+  </section>
+
+  <!-- 4. Choose More Heroes -->
+ <section id="choose">
+  <h2>Choose Your Hero</h2>
+  <div class="heroes-list">
+    <div class="flip-card" onclick="chooseHero('Thunder Titan')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          ⚡ Thor odinson
+        </div>
+        <div class="flip-card-back">
+          <img src="https://i.pinimg.com/originals/79/6c/21/796c217a7133d9a9d55c3f727dca171d.jpg" />
+        
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="chooseHero('Moon Knight ')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🌙 Moon Knight
+        </div>
+        <div class="flip-card-back">
+          <img src="https://images.thedirect.com/media/photos/mr-knights.jpg" alt="Moon Knight" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="chooseHero('Phoenix ')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🔥 Phoenix 
+        </div>
+        <div class="flip-card-back">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnjjj4g61fmbjYyhIi9vkTVDwuGMYUdCjV2A&s" alt="Phoenix " />
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card" onclick="chooseHero('killer Frost ')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          ❄ killer Frost 
+        </div>
+        <div class="flip-card-back">
+          <img src="https://imgcdn.stablediffusionweb.com/2024/10/25/1b4a486b-cc6b-463e-841a-477fecc04da3.jpg" alt="Frost Queen" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="flip-card" onclick="chooseHero('Doga')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          🐶 Doga
+        </div>
+        <div class="flip-card-back">
+          <img src="https://m.media-amazon.com/images/I/91ujJDtYBHL.jpg" alt="Doga" />
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+
+<!-- Comics Section -->
+<section id="comics">
+  <h2>Comic Library</h2>
+  <div class="comics-gallery">
+    <div class="comic-card" onclick="openComic('Avengers', 'comic1.jpg', 'Witness the fiery origins of Avengers as he battles the Shadow Syndicate.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-VOoM6NK_89f1-r56d95P4M6M-sVfi2zbIQnnRB9Ysg&s" alt="Avengers Issue #1">
+      <h3>Avengers</h3>
+      <a href="https://readcomiconline.li/Comic/Marvel-Action-Avengers-2020/Issue-3?id=243977#1" target="_blank">Read Issue</a>
+    </div>
+
+    <div class="comic-card" onclick="openComic('The Punisher', 'comic2.jpg', 'Stealth, speed, and mystery collide in Shadow Fang’s first solo adventure.')">
+      <img src="https://m.media-amazon.com/images/I/91pMGs4UXVL._UF1000,1000_QL80_.jpg" alt="The Punisher Issue #1">
+      <h3>The Punisher</h3>
+      <a href="https://readcomiconline.li/Comic/Punisher-2026/Issue-1?id=243594#2" target="_blank">Read Issue</a>
+    </div>
+
+    <div class="comic-card" onclick="openComic('Deathstroke', 'comic3.jpg', 'Aqua Storm defends the city from a villainous flood powered by dark lightning.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMkMNRjdnGLBW8eJjR9vRyJLIRXVHRAupP3Q&s" alt="Deathstroke Issue #1">
+      <h3>Deathstroke</h3>
+      <a href="https://readcomiconline.li/Comic/Deathstroke-The-Terminator/Issue-1?id=243836#5" target="_blank">Read Issue</a>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="comicModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeComic()">&times;</span>
+    <h2 id="comicTitle"></h2>
+    <img id="comicImage" src="" alt="Comic Preview">
+    <p id="comicDescription"></p>
+  </div>
+</div>
+
+<!-- 5. About Section -->
+<section id="about">
+  <h2>About This Universe</h2>
+  <p>
+    Welcome to the <strong>Superhero Universe</strong> — a playful comic‑style web app 
+    where you can explore hero details, send them into battle, test your knowledge 
+    with quizzes, and recruit new fighters. 
+  </p>
+  <p>
+    Built for fans who love <em>action, parody, and creativity</em>, this portal 
+    blends coding fun with comic storytelling. Choose your hero, unleash their powers, 
+    and see who triumphs in the arena!
+  </p>
+</section>
+<section id="contacts"
+    <h2>Contact Us</h2>
+    <p>Have questions or want to join our superhero team? Reach out to us!</p>
+    <ul>
+      <li>Email: <a href="mailto:abnajarhoro15@gmail.com">abnajarhoro15@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <script src="zcode.js"></script>
+</body>
+</html>
